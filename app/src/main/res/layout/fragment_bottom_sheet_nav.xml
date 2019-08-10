@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/layout_nav_main"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="?attr/selectableItemBackground"-->
+        <!--android:clickable="true"-->
+        <!--android:visibility="visible">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/text_nav_main"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:fontFamily="@font/lora"-->
+            <!--android:background="@android:color/transparent"-->
+            <!--android:drawableLeft="@drawable/ic_menu_grey"-->
+            <!--android:drawablePadding="@dimen/text_drawable_left_padding"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:padding="@dimen/textview_padding"-->
+            <!--android:text="Main" />-->
+    <!--</LinearLayout>-->
+
+    <LinearLayout
+        android:id="@+id/layout_nav_projects"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true">
+
+        <TextView
+            android:id="@+id/text_nav_projects"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:fontFamily="@font/lora"
+            android:drawableLeft="@drawable/ic_project_grey"
+            android:drawablePadding="@dimen/text_drawable_left_padding"
+            android:gravity="center_vertical"
+            android:padding="@dimen/textview_padding"
+            android:text="Projects" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_nav_team"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/text_nav_scratch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:fontFamily="@font/lora"
+            android:drawableLeft="@drawable/ic_team_grey"
+            android:drawablePadding="@dimen/text_drawable_left_padding"
+            android:gravity="center_vertical"
+            android:padding="@dimen/textview_padding"
+            android:text="Our Team" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_nav_stories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true">
+
+        <TextView
+            android:id="@+id/text_nav_stories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:fontFamily="@font/lora"
+            android:drawableLeft="@drawable/ic_stories_grey"
+            android:drawablePadding="@dimen/text_drawable_left_padding"
+            android:gravity="center_vertical"
+            android:padding="@dimen/textview_padding"
+            android:text="Our Stories" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_nav_events"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true">
+
+        <TextView
+            android:id="@+id/text_nav_events"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:fontFamily="@font/lora"
+            android:drawableLeft="@drawable/ic_event_grey"
+            android:drawablePadding="@dimen/text_drawable_left_padding"
+            android:gravity="center_vertical"
+            android:padding="@dimen/textview_padding"
+            android:text="Events" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_nav_code_conduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true">
+
+        <TextView
+            android:id="@+id/text_nav_code_conduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:fontFamily="@font/lora"
+            android:drawableLeft="@drawable/ic_code_conduct_grey"
+            android:drawablePadding="@dimen/text_drawable_left_padding"
+            android:gravity="center_vertical"
+            android:padding="@dimen/textview_padding"
+            android:text="Code of Conduct" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_nav_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true">
+
+        <TextView
+            android:id="@+id/text_nav_about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:fontFamily="@font/lora"
+            android:drawableLeft="@drawable/ic_info_grey"
+            android:drawablePadding="@dimen/text_drawable_left_padding"
+            android:gravity="center_vertical"
+            android:padding="@dimen/textview_padding"
+            android:text="About" />
+    </LinearLayout>
+</LinearLayout>

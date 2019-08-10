@@ -5,4 +5,6 @@
     <color name="googleRed">#DB4437</color>
     <color name="googleYellow">#F4B400</color>
     <color name="googleGreen">#0F9D58</color>
+
+    <color name="colorPrimaryNav">#334285F4</color>
 </resources>
