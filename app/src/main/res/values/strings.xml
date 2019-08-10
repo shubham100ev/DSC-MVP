@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DSC KIET</string>
+    <string name="title_intro">Welcome to\n Developer Student\n Clubs </string>
+    <string name="sub_title_intro">powered by\n <b> Google Developers </b></string>
 </resources>
