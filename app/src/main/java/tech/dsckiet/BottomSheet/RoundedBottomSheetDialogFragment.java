@@ -22,12 +22,7 @@ public class RoundedBottomSheetDialogFragment extends BottomSheetDialogFragment 
 
     public NavClickListener navclickListener = null;
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setStyle(BottomSheetDialogFragment.STYLE_NORMAL, R.style.BottomSheetDialogTheme);
 
-    }
 
     @Nullable
     @Override

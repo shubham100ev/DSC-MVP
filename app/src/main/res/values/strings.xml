@@ -3,6 +3,28 @@
     <string name="title_intro">Welcome to\n Developer Student\n Clubs </string>
     <string name="sub_title_intro">powered by\n <b> Google Developers </b></string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about_content">A Developer Student Clubs is a Google recognised student body at a
+        college which directly reports to Google for their activities and is supported by the tech
+        giant.\n\n A DSC conducts workshops, seminars and other fun activities which help the students
+        connect with Google.\n\n Developer Student Club KIET is inspired by Google Developers Family. We
+        started our journey in Feb 2019. We try to engage student developers through our hack
+        events, codelabs and meetups. The motive is to create a local ecosystem of programmers &amp;
+        hackers in and around the Campus. The technology awareness is main goal for first few years
+        of the group.
+    </string>
+
+    <string name="website_url">
+        <a href="www.dsckiet.tech">www.dsckiet.tech</a>
+    </string>
+
+    <string name="code_of_conduct">
+        You guys are part of DSCKIET now and Discipline is very essential for a healthy atmosphere and the achievement of organisational goals. So here are some rules, that we expect you to follow as a part of this community:-
+        \n\n1. First thing first, we believe in developing and growing together. As we already mentioned we are not a group or a club, we are a community of awesome people who loves to code, debug and party together!
+        \n\n2. We don\'t care in which year you are, if you have the potential and calibre and just want to channelize it, then indeed you are at the right place.
+        \n\n3. We don\'t promote ragging at all, and will not be tolerated.
+        \n\n4. Don\'t ping someone for an invalid reason if you don\'t know them if you have some doubt about something then it\'s better to ask on the main group as it may benefit others too. In case you\'re not comfortable then you can interact with the core members of the specific domain.
+        \n\n5. Please don\'t use abusive language in the group. Keep your conversation professional and formal. And try to keep it short and free with semantic errors.
+        \n\n6. Don\'t promote any social content other than tech information like- hackathons, internships etc. Tech blogs can also be shared, no issue. Just be technical and professional.
+        \n\n7. Feel free to ask anything if you need help with other technologies too. There might be someone who can help you!
+    </string>
 </resources>

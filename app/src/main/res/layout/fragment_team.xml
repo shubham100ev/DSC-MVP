@@ -3,12 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Team.TeamFragment">
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Team Fragment" />
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:paddingHorizontal="30dp">
 
+        <TextView
+            style="@style/CustomText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Our Team"
+            android:textSize="32sp" />
+    </LinearLayout>
 </FrameLayout>

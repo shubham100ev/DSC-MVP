@@ -1,5 +1,6 @@
 package tech.dsckiet;
 
+import android.content.Context;
 import android.support.design.bottomappbar.BottomAppBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements RoundedBottomShee
             bottomSheetDialog.navclickListener = this;
             bottomSheetDialog.show(getSupportFragmentManager(),"bottom sheet");
         }
+        bottomSheetDialog.setCancelable(true);
     }
 
     private void updateFragment(int index){

@@ -1,14 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Events.EventsFragment">
+    android:background="@android:color/white">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Events Fragment" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="30dp"
+                tools:targetApi="o">
 
-</FrameLayout>
+                <TextView
+                    android:id="@+id/title_events"
+                    style="@style/CustomText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="@font/nunito"
+                    android:text="Events"
+                    android:layout_marginBottom="16dp"
+                    android:textSize="32sp" />
+
+                <!-- Radio Buttons -->
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_view_radio_buttons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_below="@id/title_events"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:background="#f8f8f8"
+                        android:layout_height="match_parent">
+
+                        <RadioGroup
+                            android:id="@+id/radio_group"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:padding="8dp">
+
+
+                            <RadioButton
+                                android:id="@+id/radio1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/radio_flat_selector"
+                                android:button="@android:color/transparent"
+                                android:gravity="center"
+                                android:checked="true"
+                                android:fontFamily="@font/nunito"
+                                android:padding="8dp"
+                                android:text="Weekly"
+                                android:textColor="@color/radio_flat_text_selector"
+                                android:textSize="16sp" />
+
+                            <RadioButton
+                                android:id="@+id/radio2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/radio_flat_selector"
+                                android:button="@android:color/transparent"
+                                android:gravity="center"
+                                android:fontFamily="@font/nunito"
+                                android:padding="8dp"
+                                android:paddingLeft="16dp"
+                                android:text="Monthly"
+                                android:textColor="@color/radio_flat_text_selector"
+                                android:textSize="16sp" />
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+                <!-- layout when no events are there -->
+                <LinearLayout
+                    android:id="@+id/layout_no_events"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:minHeight="350dp"
+                    android:layout_below="@id/card_view_radio_buttons"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:text="No upcoming events"
+                        android:gravity="center"
+                        style="@style/CustomText"
+                        android:textSize="20sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="centerInside"
+                        android:layout_margin="8dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/no_events"/>
+                </LinearLayout>
+
+                <!-- layout when events are there -->
+                <LinearLayout
+                    android:id="@+id/layout_events"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:minHeight="350dp"
+                    android:layout_below="@id/card_view_radio_buttons"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:text="Events are here"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+
+</ScrollView>

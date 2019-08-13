@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:fontFamily="@font/lora"
+            android:fontFamily="@font/nunito"
             android:background="@android:color/transparent"
             android:drawableLeft="@drawable/ic_menu_grey"
             android:drawablePadding="@dimen/text_drawable_left_padding"
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:fontFamily="@font/lora"
+            android:fontFamily="@font/nunito"
             android:drawableLeft="@drawable/ic_project_grey"
             android:drawablePadding="@dimen/text_drawable_left_padding"
             android:gravity="center_vertical"
@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
         android:clickable="true"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:visibility="visible">
 
         <TextView
@@ -67,7 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:fontFamily="@font/lora"
+            android:fontFamily="@font/nunito"
             android:drawableLeft="@drawable/ic_team_grey"
             android:drawablePadding="@dimen/text_drawable_left_padding"
             android:gravity="center_vertical"
@@ -82,7 +82,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:clickable="true">
 
         <TextView
@@ -90,7 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:fontFamily="@font/lora"
+            android:fontFamily="@font/nunito"
             android:drawableLeft="@drawable/ic_stories_grey"
             android:drawablePadding="@dimen/text_drawable_left_padding"
             android:gravity="center_vertical"
@@ -105,7 +105,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:clickable="true">
 
         <TextView
@@ -113,7 +113,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:fontFamily="@font/lora"
+            android:fontFamily="@font/nunito"
             android:drawableLeft="@drawable/ic_event_grey"
             android:drawablePadding="@dimen/text_drawable_left_padding"
             android:gravity="center_vertical"
@@ -128,7 +128,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:clickable="true">
 
         <TextView
@@ -136,7 +136,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:fontFamily="@font/lora"
+            android:fontFamily="@font/nunito"
             android:drawableLeft="@drawable/ic_code_conduct_grey"
             android:drawablePadding="@dimen/text_drawable_left_padding"
             android:gravity="center_vertical"
@@ -151,7 +151,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
         android:clickable="true">
 
         <TextView
@@ -159,7 +160,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:fontFamily="@font/lora"
+            android:fontFamily="@font/nunito"
             android:drawableLeft="@drawable/ic_info_grey"
             android:drawablePadding="@dimen/text_drawable_left_padding"
             android:gravity="center_vertical"
