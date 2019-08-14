@@ -4,9 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -18,28 +16,40 @@
                 style="@style/CustomText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="24dp"
                 android:text="Code of Conduct"
                 android:textSize="32sp" />
 
-            <TextView
-                style="@style/CustomText"
+            <android.support.v4.widget.NestedScrollView
+                android:layout_marginTop="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="@string/code_of_conduct"
-                android:textSize="16sp" />
+                android:layout_height="match_parent">
 
-            <TextView
-                style="@style/CustomText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="40dp"
-                android:text="Keep Learning! Keep Growing!"
-                android:textSize="20sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
 
+                    <TextView
+                        style="@style/CustomText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/code_of_conduct"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        style="@style/CustomText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="40dp"
+                        android:text="Keep Learning! Keep Growing!"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+            </android.support.v4.widget.NestedScrollView>
         </LinearLayout>
 
-    </ScrollView>
+
 </FrameLayout>
