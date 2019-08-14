@@ -27,4 +27,7 @@
         \n\n6. Don\'t promote any social content other than tech information like- hackathons, internships etc. Tech blogs can also be shared, no issue. Just be technical and professional.
         \n\n7. Feel free to ask anything if you need help with other technologies too. There might be someone who can help you!
     </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
