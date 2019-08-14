@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,7 +12,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingHorizontal="30dp"
+                android:paddingHorizontal="20dp"
                 tools:targetApi="o">
 
                 <TextView
@@ -18,7 +20,7 @@
                     style="@style/CustomText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="24dp"
                     android:fontFamily="@font/nunito"
                     android:text="Events"
                     android:layout_marginBottom="16dp"
@@ -49,7 +51,7 @@
 
 
                             <RadioButton
-                                android:id="@+id/radio1"
+                                android:id="@+id/radio_upcoming"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -59,12 +61,12 @@
                                 android:checked="true"
                                 android:fontFamily="@font/nunito"
                                 android:padding="8dp"
-                                android:text="Weekly"
+                                android:text="Upcoming"
                                 android:textColor="@color/radio_flat_text_selector"
                                 android:textSize="16sp" />
 
                             <RadioButton
-                                android:id="@+id/radio2"
+                                android:id="@+id/radio_past"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -74,7 +76,7 @@
                                 android:fontFamily="@font/nunito"
                                 android:padding="8dp"
                                 android:paddingLeft="16dp"
-                                android:text="Monthly"
+                                android:text="Past Events"
                                 android:textColor="@color/radio_flat_text_selector"
                                 android:textSize="16sp" />
 
@@ -91,10 +93,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="8dp"
-                    android:minHeight="350dp"
                     android:layout_below="@id/card_view_radio_buttons"
                     android:orientation="vertical"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:gravity="center_vertical">
 
                     <TextView
@@ -103,7 +104,7 @@
                         style="@style/CustomText"
                         android:textSize="20sp"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="wrap_content" />
 
                     <ImageView
                         android:layout_width="80dp"
@@ -119,22 +120,32 @@
                     android:id="@+id/layout_events"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:minHeight="450dp"
+                    android:layout_marginTop="16dp"
                     android:layout_below="@id/card_view_radio_buttons"
                     android:orientation="vertical"
-                    android:visibility="visible"
+                    android:visibility="gone"
+                    android:layout_marginBottom="16dp"
                     android:gravity="center_vertical">
+
+                    <android.support.v4.widget.NestedScrollView
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent">
+
 
                     <android.support.v7.widget.RecyclerView
                         android:id="@+id/recycler_view_events"
                         android:layout_width="match_parent"
+                        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
                         android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="true"
+                        android:scrollbars="none"
                         android:orientation="vertical"/>
+                    </android.support.v4.widget.NestedScrollView>
                 </LinearLayout>
 
             </RelativeLayout>
 
 
 
-</ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

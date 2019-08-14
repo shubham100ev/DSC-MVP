@@ -4,14 +4,9 @@ public class BaseClass {
 
     private static BaseClass mInstance = null;
 
-    public String BASE_URL = "http://www.dsckiet.tech/api/v1";
-    public void setBASE_URL(String baseUrl){
-        BASE_URL += baseUrl;
-    }
+    public String BASE_URL_EVENTS = "http://www.dsckiet.tech/api/v1/events";
 
-    public String getBASE_URL(){
-        return BASE_URL;
-    }
+
 
     protected BaseClass() {
 

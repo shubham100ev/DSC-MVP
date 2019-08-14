@@ -1,11 +1,12 @@
 package tech.dsckiet;
 
-import android.content.Context;
 import android.support.design.bottomappbar.BottomAppBar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import tech.dsckiet.About.AboutFragment;
 import tech.dsckiet.BottomSheet.RoundedBottomSheetDialogFragment;
@@ -62,25 +63,25 @@ public class MainActivity extends AppCompatActivity implements RoundedBottomShee
     private void updateFragment(int index){
         switch (index){
             case 1:
-                getSupportFragmentManager().beginTransaction().replace(R.id.container, new ProjectFragment()).commit();
+                replaceFragment(new ProjectFragment());
                 break;
             case 2:
-                getSupportFragmentManager().beginTransaction().replace(R.id.container, new TeamFragment()).commit();
+                replaceFragment(new TeamFragment());
                 break;
             case 3:
-                getSupportFragmentManager().beginTransaction().replace(R.id.container, new StoriesFragment()).commit();
+                replaceFragment(new StoriesFragment());
                 break;
             case 4:
-                getSupportFragmentManager().beginTransaction().replace(R.id.container, new EventsFragment()).commit();
+                replaceFragment(new EventsFragment());
                 break;
             case 5:
-                getSupportFragmentManager().beginTransaction().replace(R.id.container, new CodeConductFragment()).commit();
+                replaceFragment(new CodeConductFragment());
                 break;
             case 6:
-                getSupportFragmentManager().beginTransaction().replace(R.id.container, new AboutFragment()).commit();
+                replaceFragment(new AboutFragment());
                 break;
             default:
-                getSupportFragmentManager().beginTransaction().replace(R.id.container, new AboutFragment()).commit();
+                replaceFragment(new ProjectFragment());
                 break;
         }
     }
@@ -93,6 +94,21 @@ public class MainActivity extends AppCompatActivity implements RoundedBottomShee
             updateFragment(index);
         }catch (Exception e){
             e.printStackTrace();
+        }
+    }
+
+    private void replaceFragment(Fragment fragment) {
+        String backStateName = fragment.getClass().getName();
+        FragmentManager manager = getSupportFragmentManager();
+        boolean fragmentPopped = manager.popBackStackImmediate(backStateName, 0);
+
+        if (!fragmentPopped && manager.findFragmentByTag(backStateName) == null) {
+            // fragment not in back stack, create it
+            FragmentTransaction fragmentTransaction = manager.beginTransaction();
+            fragmentTransaction.replace(R.id.container, fragment, backStateName);
+            fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            fragmentTransaction.addToBackStack(backStateName);
+            fragmentTransaction.commit();
         }
     }
 }
