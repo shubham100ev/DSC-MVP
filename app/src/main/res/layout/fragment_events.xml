@@ -94,7 +94,7 @@
                     android:minHeight="350dp"
                     android:layout_below="@id/card_view_radio_buttons"
                     android:orientation="vertical"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:gravity="center_vertical">
 
                     <TextView
@@ -120,17 +120,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="8dp"
-                    android:minHeight="350dp"
+                    android:minHeight="450dp"
                     android:layout_below="@id/card_view_radio_buttons"
                     android:orientation="vertical"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:gravity="center_vertical">
 
-                    <TextView
-                        android:text="Events are here"
-                        android:gravity="center"
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler_view_events"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"/>
                 </LinearLayout>
 
             </RelativeLayout>
