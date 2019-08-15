@@ -46,7 +46,7 @@ public class TeamFragment extends Fragment {
     private Context mContext;
     final ArrayList<ModelTeam> list1 = new ArrayList<>();
     final ArrayList<ModelTeam> list2 = new ArrayList<>();
-    final ArrayList<ModelTeam> list = new ArrayList<>();
+
     public TeamFragment() {
         // Required empty public constructor
     }

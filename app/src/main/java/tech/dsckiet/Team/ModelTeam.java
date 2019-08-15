@@ -1,12 +1,7 @@
 package tech.dsckiet.Team;
 
 public class ModelTeam {
-//
-//    String email = arr.getJSONObject(i).getString("email");
-//    String linkedin = arr.getJSONObject(i).getString("linkedin");
-//    String github = arr.getJSONObject(i).getString("github");
-//    String twitter = arr.getJSONObject(i).getString("twitter");
-//    String website = arr.getJSONObject(i).getString("website");
+
     public String mName, mRole,mImage,mEmail,mLinkedin,mGithub,mTwitter,mWebsite;
 
     private boolean expanded;
