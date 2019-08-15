@@ -1,23 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:background="@android:color/white">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/white"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingHorizontal="30dp">
+        android:paddingHorizontal="30dp"
+        tools:targetApi="o">
 
         <TextView
+            android:id="@+id/title_stories"
             style="@style/CustomText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/nunito"
             android:text="Our Stories"
+            android:layout_marginBottom="16dp"
             android:textSize="32sp" />
-    </LinearLayout>
-</FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_stories"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_below="@id/title_stories"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical">
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view_stories"
+                    android:layout_width="match_parent"
+                    app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                    android:layout_height="match_parent"
+                    android:nestedScrollingEnabled="true"
+                    android:scrollbars="none"
+                    android:orientation="vertical"/>
+            </android.support.v4.widget.NestedScrollView>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>
