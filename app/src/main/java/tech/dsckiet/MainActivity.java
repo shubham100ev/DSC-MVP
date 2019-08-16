@@ -1,6 +1,10 @@
 package tech.dsckiet;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.design.bottomappbar.BottomAppBar;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
@@ -11,6 +15,11 @@ import android.support.v4.view.GravityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import tech.dsckiet.About.AboutFragment;
 import tech.dsckiet.BottomSheet.RoundedBottomSheetDialogFragment;
@@ -56,7 +65,27 @@ public class MainActivity extends AppCompatActivity implements RoundedBottomShee
             }
         });
 
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(
+                    "MyNotifications","MyNotifications", NotificationManager.IMPORTANCE_DEFAULT
+            );
 
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+
+
+        }
+
+        FirebaseMessaging.getInstance().subscribeToTopic("education")
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        String msg = "Successfull";
+                        if(!task.isSuccessful()){
+                            msg = "failed";
+                        }
+                    }
+                });
     }
 
 
