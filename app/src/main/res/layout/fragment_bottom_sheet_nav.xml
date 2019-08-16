@@ -124,6 +124,30 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/layout_nav_leader_board"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true">
+
+        <TextView
+            android:id="@+id/text_nav_leader_board"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:fontFamily="@font/nunito"
+            android:drawableLeft="@drawable/ic_leader_board_grey"
+            android:drawablePadding="@dimen/text_drawable_left_padding"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:padding="@dimen/textview_padding"
+            android:text="Leaderboard" />
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/layout_nav_code_conduct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

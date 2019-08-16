@@ -9,6 +9,7 @@ public class BaseClass {
     public String BASE_URL_STORIES = "http://www.dsckiet.tech/api/v1/stories";
     public String BASE_URL_TEAM = "http://www.dsckiet.tech/api/v1/team";
     public String BASE_URL_PROJECT = "http://www.dsckiet.tech/api/v1/ideas";
+    public String BASE_URL_LEADERBOARD = "http://www.dsckiet.tech/api/v1/gscpHackerrank";
 
 
     protected BaseClass() {

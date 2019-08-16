@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
 
+import tech.dsckiet.HomeActivity;
 import tech.dsckiet.MainActivity;
 import tech.dsckiet.R;
 
@@ -22,7 +23,7 @@ public class IntroActivity extends AppCompatActivity {
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(IntroActivity.this, MainActivity.class);
+                Intent intent = new Intent(IntroActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
             }

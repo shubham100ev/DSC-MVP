@@ -17,8 +17,8 @@ import static tech.dsckiet.MainActivity.selectedFragmentIndex;
 public class RoundedBottomSheetDialogFragment extends BottomSheetDialogFragment {
 
 
-    LinearLayout layoutnavMain, layoutnavProjects, layoutnavTeam, layoutnavStories, layoutnavEvents, layoutnavCodeConduct, layoutnavAbout;
-    TextView textnavMain, textnavProjects, textnavTeam, textnavStories, textnavEvents, textnavCodeConduct, textnavAbout;
+    LinearLayout layoutnavMain, layoutnavProjects, layoutnavTeam, layoutnavStories, layoutnavEvents,layoutnavLeaderboard, layoutnavCodeConduct, layoutnavAbout;
+    TextView textnavMain, textnavProjects, textnavTeam, textnavStories, textnavEvents,textnavLeaderboard, textnavCodeConduct, textnavAbout;
 
     public NavClickListener navclickListener = null;
 
@@ -33,6 +33,7 @@ public class RoundedBottomSheetDialogFragment extends BottomSheetDialogFragment 
         layoutnavTeam = (LinearLayout) view.findViewById(R.id.layout_nav_team);
         layoutnavStories = (LinearLayout) view.findViewById(R.id.layout_nav_stories);
         layoutnavEvents = (LinearLayout) view.findViewById(R.id.layout_nav_events);
+        layoutnavLeaderboard = (LinearLayout) view.findViewById(R.id.layout_nav_leader_board);
         layoutnavCodeConduct = (LinearLayout) view.findViewById(R.id.layout_nav_code_conduct);
         layoutnavAbout = (LinearLayout) view.findViewById(R.id.layout_nav_about);
 
@@ -41,6 +42,7 @@ public class RoundedBottomSheetDialogFragment extends BottomSheetDialogFragment 
         textnavTeam = (TextView) view.findViewById(R.id.text_nav_team);
         textnavStories = (TextView) view.findViewById(R.id.text_nav_stories);
         textnavEvents = (TextView) view.findViewById(R.id.text_nav_events);
+        textnavLeaderboard = (TextView) view.findViewById(R.id.text_nav_leader_board);
         textnavCodeConduct = (TextView) view.findViewById(R.id.text_nav_code_conduct);
         textnavAbout = (TextView) view.findViewById(R.id.text_nav_about);
 
@@ -91,17 +93,24 @@ public class RoundedBottomSheetDialogFragment extends BottomSheetDialogFragment 
             }
         });
 
-        layoutnavCodeConduct.setOnClickListener(new View.OnClickListener() {
+        layoutnavLeaderboard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 navclickListener.onNavItemClicked(5);
             }
         });
 
-        layoutnavAbout.setOnClickListener(new View.OnClickListener() {
+        layoutnavCodeConduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 navclickListener.onNavItemClicked(6);
+            }
+        });
+
+        layoutnavAbout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navclickListener.onNavItemClicked(7);
             }
         });
 
@@ -114,6 +123,7 @@ public class RoundedBottomSheetDialogFragment extends BottomSheetDialogFragment 
         textnavTeam.setBackgroundResource(0);
         textnavStories.setBackgroundResource(0);
         textnavEvents.setBackgroundResource(0);
+        textnavLeaderboard.setBackgroundResource(0);
         textnavCodeConduct.setBackgroundResource(0);
         textnavAbout.setBackgroundResource(0);
 
@@ -138,9 +148,12 @@ public class RoundedBottomSheetDialogFragment extends BottomSheetDialogFragment 
                 textnavEvents.setBackgroundResource(bgResourceId);
                 break;
             case 5:
-                textnavCodeConduct.setBackgroundResource(bgResourceId);
+                textnavLeaderboard.setBackgroundResource(bgResourceId);
                 break;
             case 6:
+                textnavCodeConduct.setBackgroundResource(bgResourceId);
+                break;
+            case 7:
                 textnavAbout.setBackgroundResource(bgResourceId);
                 break;
         }

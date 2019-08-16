@@ -8,6 +8,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
+import tech.dsckiet.HomeActivity;
 import tech.dsckiet.MainActivity;
 import tech.dsckiet.R;
 
@@ -45,7 +46,7 @@ public class SplashActivity extends AppCompatActivity {
                 public void run() {
 
 
-                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent i = new Intent(getApplicationContext(), HomeActivity.class);
                         startActivity(i);
                         finish();
                         finishActivity(0);

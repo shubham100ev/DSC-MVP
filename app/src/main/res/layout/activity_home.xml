@@ -12,15 +12,27 @@
         android:background="#FFF"
         android:orientation="vertical"
         android:paddingHorizontal="30dp"
-        android:paddingTop="32dp"
+        android:paddingTop="24dp"
         android:paddingBottom="20dp">
 
-        <TextView
-            style="@style/CustomText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Home"
-            android:textSize="38sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                style="@style/CustomText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textSize="32sp" />
+            <TextView
+                style="@style/CustomText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="V 0.0.1"
+                android:textSize="16sp" />
+        </LinearLayout>
 
         <ImageView
             android:layout_width="match_parent"
@@ -36,7 +48,7 @@
             android:layout_marginHorizontal="2dp"
             android:layout_marginTop="20dp"
             android:text="Welcome to DSC KIET "
-            android:textSize="28sp" />
+            android:textSize="24sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,7 +64,9 @@
                 android:layout_weight="1"
                 android:onClick="cardClick"
                 app:cardCornerRadius="8dp"
-                app:cardMaxElevation="4dp">
+                app:cardElevation="6dp"
+                android:elevation="8dp"
+                app:cardMaxElevation="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -87,7 +101,9 @@
                 android:layout_weight="1"
                 android:onClick="cardClick"
                 app:cardCornerRadius="8dp"
-                app:cardMaxElevation="4dp">
+                app:cardElevation="6dp"
+                android:elevation="8dp"
+                app:cardMaxElevation="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -120,7 +136,9 @@
                 android:layout_weight="1"
                 android:onClick="cardClick"
                 app:cardCornerRadius="8dp"
-                app:cardMaxElevation="4dp">
+                app:cardElevation="6dp"
+                android:elevation="8dp"
+                app:cardMaxElevation="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -160,7 +178,9 @@
                 android:layout_weight="1"
                 android:onClick="cardClick"
                 app:cardCornerRadius="8dp"
-                app:cardMaxElevation="4dp">
+                app:cardElevation="6dp"
+                android:elevation="8dp"
+                app:cardMaxElevation="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -193,7 +213,9 @@
                 android:layout_weight="1"
                 android:onClick="cardClick"
                 app:cardCornerRadius="8dp"
-                app:cardMaxElevation="4dp">
+                app:cardElevation="6dp"
+                android:elevation="8dp"
+                app:cardMaxElevation="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -226,7 +248,9 @@
                 android:layout_weight="1"
                 android:onClick="cardClick"
                 app:cardCornerRadius="8dp"
-                app:cardMaxElevation="4dp">
+                app:cardElevation="6dp"
+                android:elevation="8dp"
+                app:cardMaxElevation="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -252,16 +276,6 @@
 
 
         </LinearLayout>
-
-        <TextView
-            style="@style/CustomText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="80dp"
-            android:text="Version 0.0.1"
-            android:textSize="16dp" />
-
 
     </LinearLayout>
 </ScrollView>

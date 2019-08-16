@@ -14,38 +14,38 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    void cardClick(View view) {
+    public void cardClick(View view) {
         if (view == findViewById(R.id.project_card)) {
             Intent intent = new Intent(HomeActivity.this, MainActivity.class);
-            intent.putExtra("Fragment", 1);
+            intent.putExtra("Fragment", "1");
             startActivity(intent);
-            finish();
+//            finish();
 
         } else if (view == findViewById(R.id.team_card)) {
             Intent intent = new Intent(HomeActivity.this, MainActivity.class);
-            intent.putExtra("Fragment", 2);
+            intent.putExtra("Fragment", "2");
             startActivity(intent);
-            finish();
+//            finish();
         } else if (view == findViewById(R.id.stories_card)) {
             Intent intent = new Intent(HomeActivity.this, MainActivity.class);
-            intent.putExtra("Fragment", 3);
+            intent.putExtra("Fragment", "3");
             startActivity(intent);
-            finish();
+//            finish();
         } else if (view == findViewById(R.id.events_card)) {
             Intent intent = new Intent(HomeActivity.this, MainActivity.class);
-            intent.putExtra("Fragment", 4);
+            intent.putExtra("Fragment", "4");
             startActivity(intent);
-            finish();
+//            finish();
         } else if (view == findViewById(R.id.about_card)) {
             Intent intent = new Intent(HomeActivity.this, MainActivity.class);
-            intent.putExtra("Fragment", 6);
+            intent.putExtra("Fragment", "7");
             startActivity(intent);
-            finish();
+//            finish();
         } else if (view == findViewById(R.id.score_card)) {
             Intent intent = new Intent(HomeActivity.this, MainActivity.class);
-            intent.putExtra("Fragment", 7);
+            intent.putExtra("Fragment", "5");
             startActivity(intent);
-            finish();
+//            finish();
         }
     }
 }
