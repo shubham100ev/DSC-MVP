@@ -4,9 +4,6 @@ public class ModelProject {
 
     public String mTitle,mDesc;
 
-
-
-
     public ModelProject() {
 
     }

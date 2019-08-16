@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="6dp"
-    app:cardMaxElevation="4dp">
+    android:elevation="8dp"
+    android:layout_marginRight="4dp"
+    android:layout_marginLeft="4dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardElevation="6dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,20 +24,20 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/user_handle"
+                android:id="@+id/leaderboard_handle"
                 style="@style/CustomText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="\@ritwick_bhargav"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/score"
+                android:id="@+id/leaderboard_score"
                 style="@style/CustomText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Score:325"
-                android:textSize="16dp" />
+                android:textSize="16sp" />
 
         </LinearLayout>
 
@@ -47,7 +52,7 @@
                 android:src="@drawable/ic_polygon" />
 
             <TextView
-                android:id="@+id/rank"
+                android:id="@+id/leaderboard_rank"
                 style="@style/CustomText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
