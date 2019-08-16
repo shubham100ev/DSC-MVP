@@ -14,7 +14,13 @@
         android:orientation="vertical"
         android:paddingHorizontal="30dp"
         tools:targetApi="o">
-
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/progress_team"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            app:indicatorColor="@color/colorPrimary"
+            app:indicatorName="BallScaleMultipleIndicator" />
         <TextView
             android:id="@+id/title_team"
             style="@style/CustomText"

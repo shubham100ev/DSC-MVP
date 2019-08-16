@@ -47,7 +47,7 @@ public class EventsFragment extends Fragment {
     private EventAdapter mAdapter;
     private RecyclerView mRecyclerView;
     private Context mContext;
-
+    private com.wang.avi.AVLoadingIndicatorView progressBar;
 
     private RadioGroup mRadioGroup;
     private RadioButton mRadioButton,mRadioButton1;
@@ -76,6 +76,7 @@ public class EventsFragment extends Fragment {
         mRadioButton1.setChecked(true);
         mLayoutItem = view.findViewById(R.id.layout_events);
         mLayoutNoItem = view.findViewById(R.id.layout_no_events);
+        progressBar = view.findViewById(R.id.progress_events);
 
         mRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @SuppressLint("ResourceType")
@@ -192,6 +193,7 @@ public class EventsFragment extends Fragment {
                                 mRecyclerView.setAdapter(mAdapter);
 
                                 mAdapter.notifyDataSetChanged();
+                                progressBar.setVisibility(View.GONE);
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }

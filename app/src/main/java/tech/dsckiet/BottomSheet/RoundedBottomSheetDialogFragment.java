@@ -1,9 +1,13 @@
 package tech.dsckiet.BottomSheet;
 
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetDialogFragment;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -130,35 +134,42 @@ public class RoundedBottomSheetDialogFragment extends BottomSheetDialogFragment 
     }
 
     private void updateNavList(int index) {
-        int bgResourceId = R.drawable.bg_nav_sheet_selection_gradient;
         switch (index) {
             case 0:
-                textnavMain.setBackgroundResource(bgResourceId);
+                setTextViewColors(textnavMain);
                 break;
             case 1:
-                textnavProjects.setBackgroundResource(bgResourceId);
+                setTextViewColors(textnavProjects);
                 break;
             case 2:
-                textnavTeam.setBackgroundResource(bgResourceId);
+                setTextViewColors(textnavTeam);
                 break;
             case 3:
-                textnavStories.setBackgroundResource(bgResourceId);
+                setTextViewColors(textnavStories);
                 break;
             case 4:
-                textnavEvents.setBackgroundResource(bgResourceId);
+                setTextViewColors(textnavEvents);
                 break;
             case 5:
-                textnavLeaderboard.setBackgroundResource(bgResourceId);
+                setTextViewColors(textnavLeaderboard);
                 break;
             case 6:
-                textnavCodeConduct.setBackgroundResource(bgResourceId);
+                setTextViewColors(textnavCodeConduct);
                 break;
             case 7:
-                textnavAbout.setBackgroundResource(bgResourceId);
+                setTextViewColors(textnavAbout);
                 break;
         }
     }
-
+    private void setTextViewColors(TextView textView) {
+        textView.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+        textView.setBackgroundResource(R.drawable.bg_nav_sheet_selection_gradient);
+        for (Drawable drawable : textView.getCompoundDrawables()) {
+            if (drawable != null) {
+                drawable.setColorFilter(new PorterDuffColorFilter(ContextCompat.getColor(textView.getContext(), R.color.colorPrimaryDark), PorterDuff.Mode.SRC_IN));
+            }
+        }
+    }
 
     public interface NavClickListener {
         void onNavItemClicked(int index);

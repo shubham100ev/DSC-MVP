@@ -49,8 +49,7 @@ public class StoriesFragment extends Fragment {
     private StoriesAdapter mAdapter;
     private RecyclerView mRecyclerView;
     private Context mContext;
-
-
+    private com.wang.avi.AVLoadingIndicatorView progressBar;
 
     public StoriesFragment() {
         // Required empty public constructor
@@ -63,6 +62,7 @@ public class StoriesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_stories, container, false);;
 
         mRecyclerView = view.findViewById(R.id.recycler_view_stories);
+        progressBar = view.findViewById(R.id.progress_stories);
 
         setData();
         return view;
@@ -112,6 +112,7 @@ public class StoriesFragment extends Fragment {
                             mRecyclerView.setAdapter(mAdapter);
 
                             mAdapter.notifyDataSetChanged();
+                            progressBar.setVisibility(View.GONE);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }

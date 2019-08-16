@@ -44,7 +44,7 @@ public class TeamFragment extends Fragment {
     private TeamAdapter mAdapter;
     private RecyclerView mRecyclerView;
     private Context mContext;
-
+    private com.wang.avi.AVLoadingIndicatorView progressBar;
 
     public TeamFragment() {
         // Required empty public constructor
@@ -58,6 +58,7 @@ public class TeamFragment extends Fragment {
 
         //INITIALIZATION
         mRecyclerView = view.findViewById(R.id.recycler_view_team);
+        progressBar = view.findViewById(R.id.progress_team);
 
         setData();
         return view;
@@ -123,6 +124,7 @@ public class TeamFragment extends Fragment {
                             mRecyclerView.setAdapter(mAdapter);
 
                             mAdapter.notifyDataSetChanged();
+                            progressBar.setVisibility(View.GONE);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }

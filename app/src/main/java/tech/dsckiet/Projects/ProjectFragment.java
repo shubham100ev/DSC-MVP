@@ -1,6 +1,7 @@
 package tech.dsckiet.Projects;
 
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -42,7 +44,8 @@ public class ProjectFragment extends Fragment {
     private ProjectAdapter mAdapter;
     private RecyclerView mRecyclerView;
     private Context mContext;
-
+    private ProgressDialog dialog;
+    private com.wang.avi.AVLoadingIndicatorView progressBar;
 
     public ProjectFragment() {
         // Required empty public constructor
@@ -53,9 +56,10 @@ public class ProjectFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_project,container,false);
-
         //INITIALIZATION
         mRecyclerView = view.findViewById(R.id.recycler_view_project);
+        progressBar = view.findViewById(R.id.progress_project);
+
         setData();
         return view;
     }
@@ -70,7 +74,6 @@ public class ProjectFragment extends Fragment {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-
                             Log.d("getxxx", URL);
 
                             System.out.println("Response when HTTPCONNECT" + response);
@@ -86,12 +89,7 @@ public class ProjectFragment extends Fragment {
 
                                 list.add(new ModelProject(title, desc));
 
-
-
-
                             }
-
-
 
                             mAdapter = new ProjectAdapter(list, getContext());
                             LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
@@ -103,6 +101,7 @@ public class ProjectFragment extends Fragment {
                             mRecyclerView.setAdapter(mAdapter);
 
                             mAdapter.notifyDataSetChanged();
+                            progressBar.setVisibility(View.GONE);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }

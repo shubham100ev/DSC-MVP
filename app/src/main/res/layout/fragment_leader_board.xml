@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -15,39 +14,47 @@
         android:paddingHorizontal="30dp"
         tools:targetApi="o">
 
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/progress_leaderboard"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            app:indicatorColor="@color/colorPrimary"
+            app:indicatorName="BallScaleMultipleIndicator" />
+
         <TextView
             android:id="@+id/title_leaderboard"
             style="@style/CustomText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
             android:fontFamily="@font/nunito"
             android:text="Getting Started with CP"
-            android:layout_marginBottom="16dp"
             android:textSize="28sp" />
 
         <LinearLayout
             android:id="@+id/layout_leaderboard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
             android:layout_below="@id/title_leaderboard"
-            android:orientation="vertical"
+            android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:orientation="vertical">
 
             <android.support.v4.widget.NestedScrollView
-                android:layout_height="match_parent"
-                android:layout_width="match_parent">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_view_leaderboard"
                     android:layout_width="match_parent"
-                    app:layoutManager="android.support.v7.widget.LinearLayoutManager"
                     android:layout_height="match_parent"
                     android:nestedScrollingEnabled="true"
+                    android:orientation="vertical"
                     android:scrollbars="none"
-                    android:orientation="vertical"/>
+                    app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
             </android.support.v4.widget.NestedScrollView>
         </LinearLayout>
 

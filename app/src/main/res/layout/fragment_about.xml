@@ -60,7 +60,7 @@
                     android:layout_height="48dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:src="@drawable/link" />
+                    android:src="@drawable/link_icon" />
 
                 <ImageView
                     android:id="@+id/about_github"

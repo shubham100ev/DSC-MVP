@@ -41,6 +41,7 @@ public class LeaderBoardFragment extends Fragment {
     private LeaderBoardAdapter mAdapter;
     private RecyclerView mRecyclerView;
     private Context mContext;
+    private com.wang.avi.AVLoadingIndicatorView progressBar;
 
 
     public LeaderBoardFragment() {
@@ -55,6 +56,8 @@ public class LeaderBoardFragment extends Fragment {
 
         //INITIALIZATION
         mRecyclerView = view.findViewById(R.id.recycler_view_leaderboard);
+        progressBar = view.findViewById(R.id.progress_leaderboard);
+
         setData();
         return view;
     }
@@ -104,6 +107,7 @@ public class LeaderBoardFragment extends Fragment {
                             mRecyclerView.setAdapter(mAdapter);
 
                             mAdapter.notifyDataSetChanged();
+                            progressBar.setVisibility(View.GONE);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
