@@ -65,55 +65,62 @@
 
     </RelativeLayout>
 
-    <LinearLayout
+    <net.cachapa.expandablelayout.ExpandableLayout
         android:id="@+id/sub_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:orientation="horizontal"
+        app:el_duration="1000"
+        app:el_expanded="false"
         android:visibility="gone"
         >
-        <ImageView
-            android:id="@+id/mail_icon"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center"
-            android:padding="8dp"
-            android:layout_weight="1"
-            android:src="@drawable/mail_icon" />
-        <ImageView
-            android:id="@+id/linkedin_icon"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center"
-            android:padding="8dp"
-            android:layout_weight="1"
-            android:src="@drawable/linkedin_icon" />
-        <ImageView
-            android:id="@+id/github_icon"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center"
-            android:padding="8dp"
-            android:layout_weight="1"
-            android:src="@drawable/github_icon" />
-        <ImageView
-            android:id="@+id/twitter_icon"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center"
-            android:padding="8dp"
-            android:layout_weight="1"
-            android:src="@drawable/twitter_icon" />
-        <ImageView
-            android:id="@+id/link_icon"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center"
-            android:padding="8dp"
-            android:layout_weight="1"
-            android:src="@drawable/link_icon" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/mail_icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:padding="8dp"
+                android:layout_weight="1"
+                android:src="@drawable/mail_icon" />
+            <ImageView
+                android:id="@+id/linkedin_icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:padding="8dp"
+                android:layout_weight="1"
+                android:src="@drawable/linkedin_icon" />
+            <ImageView
+                android:id="@+id/github_icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:padding="8dp"
+                android:layout_weight="1"
+                android:src="@drawable/github_icon" />
+            <ImageView
+                android:id="@+id/twitter_icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:padding="8dp"
+                android:layout_weight="1"
+                android:src="@drawable/twitter_icon" />
+            <ImageView
+                android:id="@+id/link_icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:padding="8dp"
+                android:layout_weight="1"
+                android:src="@drawable/link_icon" />
+        </LinearLayout>
 
-    </LinearLayout>
+
+    </net.cachapa.expandablelayout.ExpandableLayout>
     </LinearLayout>
 </android.support.v7.widget.CardView>

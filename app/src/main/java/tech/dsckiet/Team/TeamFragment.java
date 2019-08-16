@@ -58,6 +58,7 @@ public class TeamFragment extends Fragment {
 
         //INITIALIZATION
         mRecyclerView = view.findViewById(R.id.recycler_view_team);
+
         setData();
         return view;
     }
@@ -110,13 +111,14 @@ public class TeamFragment extends Fragment {
 
                             list1.addAll(list2);
 
-                            mAdapter = new TeamAdapter(list1, getContext());
+
                             LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
                             layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
                             mRecyclerView.setNestedScrollingEnabled(true);
                             mRecyclerView.setHasFixedSize(true);
                             ((SimpleItemAnimator) mRecyclerView.getItemAnimator()).setSupportsChangeAnimations(false);
                             mRecyclerView.setLayoutManager(layoutManager);
+                            mAdapter = new TeamAdapter(list1, getContext(),mRecyclerView);
                             mRecyclerView.setItemAnimator(new DefaultItemAnimator());
                             mRecyclerView.setAdapter(mAdapter);
 

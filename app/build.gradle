@@ -38,4 +38,5 @@ dependencies {
     implementation 'com.android.support:customtabs:28.0.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'kr.pe.burt.android.lib:androidgradientimageview:0.0.2'
+    implementation 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
 }

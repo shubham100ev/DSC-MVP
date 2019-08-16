@@ -11,15 +11,18 @@ import android.support.customtabs.CustomTabsServiceConnection;
 import android.support.customtabs.CustomTabsSession;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+
+import net.cachapa.expandablelayout.ExpandableLayout;
 
 import java.util.List;
 
@@ -34,36 +37,88 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.MyViewHolder> 
     private CustomTabsClient mClient;
     CustomTabsSession customTabsSession;
 
+    private RecyclerView recyclerView;
+    private static final int UNSELECTED = -1;
+
+    private int selectedItem = UNSELECTED;
+
+
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-       TextView tvTeamName,tvTeamRole;
-       ImageView ivUserImage,emailIcon,linkedinIcon,githubIcon,twitterIcon,websiteIcon;
-       RelativeLayout layoutTeamCard;
-       LinearLayout layoutSubItem;
+        TextView tvTeamName, tvTeamRole;
+        ImageView ivUserImage, emailIcon, linkedinIcon, githubIcon, twitterIcon, websiteIcon;
+        RelativeLayout layoutTeamCard;
+        ExpandableLayout expandableLayout;
 
-       public MyViewHolder(@NonNull View itemView) {
-           super(itemView);
-           tvTeamName = itemView.findViewById(R.id.tv_team_name);
-           tvTeamRole = itemView.findViewById(R.id.tv_team_role);
-           ivUserImage = itemView.findViewById(R.id.iv_team_user_image);
-           layoutTeamCard = itemView.findViewById(R.id.layout_team_card);
-           layoutSubItem = itemView.findViewById(R.id.sub_item);
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+            tvTeamName = itemView.findViewById(R.id.tv_team_name);
+            tvTeamRole = itemView.findViewById(R.id.tv_team_role);
+            ivUserImage = itemView.findViewById(R.id.iv_team_user_image);
+            layoutTeamCard = itemView.findViewById(R.id.layout_team_card);
+            expandableLayout = itemView.findViewById(R.id.sub_item);
+            expandableLayout.setInterpolator(new OvershootInterpolator());
+            expandableLayout.setOnExpansionUpdateListener(new ExpandableLayout.OnExpansionUpdateListener() {
+                @Override
+                public void onExpansionUpdate(float expansionFraction, int state) {
+                    Log.d("Expandable layout", "onExpansionUpdate: " + state);
+                    if (state == ExpandableLayout.State.EXPANDING) {
+                        recyclerView.smoothScrollToPosition(getAdapterPosition());
+                    }
+                }
+            });
 
-           emailIcon = itemView.findViewById(R.id.mail_icon);
-           linkedinIcon = itemView.findViewById(R.id.linkedin_icon);
-           githubIcon = itemView.findViewById(R.id.github_icon);
-           twitterIcon = itemView.findViewById(R.id.twitter_icon);
-           websiteIcon = itemView.findViewById(R.id.link_icon);
 
-       }
+            emailIcon = itemView.findViewById(R.id.mail_icon);
+            linkedinIcon = itemView.findViewById(R.id.linkedin_icon);
+            githubIcon = itemView.findViewById(R.id.github_icon);
+            twitterIcon = itemView.findViewById(R.id.twitter_icon);
+            websiteIcon = itemView.findViewById(R.id.link_icon);
 
+            layoutTeamCard.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    MyViewHolder holder = (MyViewHolder) recyclerView.findViewHolderForAdapterPosition(selectedItem);
 
-   }
+                    if (holder != null) {
+                        holder.layoutTeamCard.setSelected(false);
+                        holder.expandableLayout.collapse();
+                        holder.expandableLayout.setVisibility(View.GONE);
+                    }
+                    int pos = getAdapterPosition();
 
-   TeamAdapter(List<ModelTeam> list, Context context){
-       this.mList = list;
-       this.mContext = context;
-   }
+                    if (pos == selectedItem) {
+                        selectedItem = UNSELECTED;
+                        expandableLayout.setVisibility(View.GONE);
+                    } else {
+                        layoutTeamCard.setSelected(true);
+                        expandableLayout.setVisibility(View.VISIBLE);
+                        expandableLayout.expand();
+                        selectedItem = pos;
+                    }
+                }
+            });
+
+        }
+
+        public void bind() {
+            int position = getAdapterPosition();
+            boolean isSelected = position == selectedItem;
+
+            if (isSelected) {
+                layoutTeamCard.setSelected(isSelected);
+                expandableLayout.setVisibility(View.GONE);
+                expandableLayout.setExpanded(isSelected, false);
+            }
+        }
+
+    }
+
+    TeamAdapter(List<ModelTeam> list, Context context, RecyclerView recyclerView) {
+        this.mList = list;
+        this.mContext = context;
+        this.recyclerView = recyclerView;
+    }
 
     @NonNull
     @Override
@@ -80,19 +135,19 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.MyViewHolder> 
         holder.tvTeamName.setText(mModel.getmName());
         holder.tvTeamRole.setText(mModel.getmRole());
 
-        if(mModel.getmEmail().equals("")){
+        if (mModel.getmEmail().equals("")) {
             holder.emailIcon.setVisibility(View.GONE);
         }
-        if(mModel.getmLinkedin().equals("")){
+        if (mModel.getmLinkedin().equals("")) {
             holder.linkedinIcon.setVisibility(View.GONE);
         }
-        if(mModel.getmGithub().equals("")){
+        if (mModel.getmGithub().equals("")) {
             holder.githubIcon.setVisibility(View.GONE);
         }
-        if(mModel.getmTwitter().equals("")){
+        if (mModel.getmTwitter().equals("")) {
             holder.twitterIcon.setVisibility(View.GONE);
         }
-        if(mModel.getmWebsite().equals("")){
+        if (mModel.getmWebsite().equals("")) {
             holder.websiteIcon.setVisibility(View.GONE);
         }
 
@@ -137,27 +192,16 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.MyViewHolder> 
         });
 
 
-
+        holder.bind();
         Picasso.get().load(mModel.getmImage()).fit().centerInside().into(holder.ivUserImage);
 
-
-        holder.layoutTeamCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                boolean expanded = mModel.isExpanded();
-                holder.layoutSubItem.setVisibility(expanded ? View.VISIBLE : View.GONE);
-
-                mModel.setExpanded(!expanded);
-//                notifyItemChanged(position);
-            }
-        });
     }
 
     @Override
     public int getItemCount() {
         return mList == null ? 0 : mList.size();
     }
+
     public void customTabLinking(String url) {
         customTabsServiceConnection = new CustomTabsServiceConnection() {
             @Override
