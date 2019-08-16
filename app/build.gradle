@@ -42,4 +42,5 @@ dependencies {
     implementation 'kr.pe.burt.android.lib:androidgradientimageview:0.0.2'
     implementation 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
     implementation 'com.wang.avi:library:2.1.3'
+
 }

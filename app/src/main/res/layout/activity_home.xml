@@ -4,35 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF"
     tools:context=".HomeActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFF"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingHorizontal="30dp"
         android:paddingTop="24dp"
         android:paddingBottom="20dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
-            <TextView
-                style="@style/CustomText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Home"
-                android:textSize="32sp" />
-            <TextView
-                style="@style/CustomText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:text="V 0.0.1"
-                android:textSize="16sp" />
-        </LinearLayout>
+        <!--<TextView-->
+            <!--style="@style/CustomText"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Home"-->
+            <!--android:textSize="32sp" />-->
 
         <ImageView
             android:layout_width="match_parent"
@@ -62,10 +50,10 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="16dp"
                 android:layout_weight="1"
+                android:elevation="8dp"
                 android:onClick="cardClick"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="6dp"
-                android:elevation="8dp"
                 app:cardMaxElevation="8dp">
 
                 <LinearLayout
@@ -88,7 +76,7 @@
                         android:layout_marginVertical="6dp"
                         android:gravity="center"
                         android:text="Events"
-                         android:textSize="16sp" />
+                        android:textSize="16sp" />
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 
@@ -99,10 +87,10 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="16dp"
                 android:layout_weight="1"
+                android:elevation="8dp"
                 android:onClick="cardClick"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="6dp"
-                android:elevation="8dp"
                 app:cardMaxElevation="8dp">
 
                 <LinearLayout
@@ -122,7 +110,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="6dp"
                         android:gravity="center"
-                        android:text="Projects"
+                        android:text="Ideas"
                         android:textSize="16dp" />
                 </LinearLayout>
             </android.support.v7.widget.CardView>
@@ -134,10 +122,10 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="16dp"
                 android:layout_weight="1"
+                android:elevation="8dp"
                 android:onClick="cardClick"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="6dp"
-                android:elevation="8dp"
                 app:cardMaxElevation="8dp">
 
                 <LinearLayout
@@ -176,10 +164,10 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="16dp"
                 android:layout_weight="1"
+                android:elevation="8dp"
                 android:onClick="cardClick"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="6dp"
-                android:elevation="8dp"
                 app:cardMaxElevation="8dp">
 
                 <LinearLayout
@@ -211,10 +199,10 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="16dp"
                 android:layout_weight="1"
+                android:elevation="8dp"
                 android:onClick="cardClick"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="6dp"
-                android:elevation="8dp"
                 app:cardMaxElevation="8dp">
 
                 <LinearLayout
@@ -246,10 +234,10 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="16dp"
                 android:layout_weight="1"
+                android:elevation="8dp"
                 android:onClick="cardClick"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="6dp"
-                android:elevation="8dp"
                 app:cardMaxElevation="8dp">
 
                 <LinearLayout
@@ -277,5 +265,14 @@
 
         </LinearLayout>
 
+        <TextView
+            style="@style/CustomText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="24dp"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:text="Version 0.0.1"
+            android:textSize="16sp" />
     </LinearLayout>
 </ScrollView>

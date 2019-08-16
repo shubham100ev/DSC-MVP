@@ -54,7 +54,7 @@ public class LeaderBoardAdapter extends RecyclerView.Adapter<LeaderBoardAdapter.
     public void onBindViewHolder(@NonNull final LeaderBoardAdapter.MyViewHolder holder, final int position) {
         mModel = mList.get(position);
 
-        holder.tvHandle.setText("@"+mModel.getmHandle());
+        holder.tvHandle.setText(mModel.getmHandle());
         holder.tvScore.setText("Score: "+mModel.getmScore());
         holder.tvRank.setText(mModel.getmRank());
     }

@@ -27,20 +27,21 @@ public class SplashActivity extends AppCompatActivity {
         Boolean isFirstRun = getSharedPreferences("PREFERENCES", MODE_PRIVATE)
                 .getBoolean("isfirstrun", true);
         logolayout.animate().alpha(1.0f).scaleX(1.1f).scaleY(1.1f).setDuration(2500);
-        if (isFirstRun) {
-
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    Intent i = new Intent(getApplicationContext(), IntroActivity.class);
-                    startActivity(i);
-                    finish();
-                }
-            }, 3000);
-
-            getSharedPreferences("PREFERENCES", MODE_PRIVATE).edit()
-                    .putBoolean("isfirstrun", false).commit();
-        } else {
+//        if (isFirstRun) {
+//
+//            new Handler().postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    Intent i = new Intent(getApplicationContext(), IntroActivity.class);
+//                    startActivity(i);
+//                    finish();
+//                }
+//            }, 3000);
+//
+//            getSharedPreferences("PREFERENCES", MODE_PRIVATE).edit()
+//                    .putBoolean("isfirstrun", false).commit();
+//        } else
+            {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {

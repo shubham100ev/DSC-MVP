@@ -14,6 +14,7 @@ import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import tech.dsckiet.R;
@@ -30,6 +31,7 @@ public class AboutFragment extends Fragment {
     private CustomTabsServiceConnection customTabsServiceConnection;
     private CustomTabsClient mClient;
     CustomTabsSession customTabsSession;
+//    private Button ossBtn;
 
     ImageView aboutLink,aboutGithub,aboutInstagram;
 
@@ -41,6 +43,7 @@ public class AboutFragment extends Fragment {
         aboutLink = view.findViewById(R.id.about_link);
         aboutGithub = view.findViewById(R.id.about_github);
         aboutInstagram = view.findViewById(R.id.about_instagram);
+//        ossBtn = view.findViewById(R.id.oss_btn);
 
         aboutLink.setOnClickListener(new View.OnClickListener() {
             @Override
