@@ -50,7 +50,7 @@
             android:padding="@dimen/textview_padding"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:text="Projects" />
+            android:text="Our Ideas" />
     </LinearLayout>
 
     <LinearLayout

@@ -44,8 +44,7 @@ public class TeamFragment extends Fragment {
     private TeamAdapter mAdapter;
     private RecyclerView mRecyclerView;
     private Context mContext;
-    final ArrayList<ModelTeam> list1 = new ArrayList<>();
-    final ArrayList<ModelTeam> list2 = new ArrayList<>();
+
 
     public TeamFragment() {
         // Required empty public constructor
@@ -67,7 +66,8 @@ public class TeamFragment extends Fragment {
 
         URL = BaseClass.getInstance().BASE_URL_TEAM;
         mTeamQueue = Volley.newRequestQueue(Objects.requireNonNull(getContext()));
-
+        final ArrayList<ModelTeam> list1 = new ArrayList<>();
+        final ArrayList<ModelTeam> list2 = new ArrayList<>();
         final JsonObjectRequest objectRequest = new JsonObjectRequest(Request.Method.GET, URL, null,
                 new Response.Listener<JSONObject>() {
                     @Override

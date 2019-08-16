@@ -43,7 +43,7 @@ public class ProjectFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private Context mContext;
 
-    final ArrayList<ModelProject> list = new ArrayList<>();
+
     public ProjectFragment() {
         // Required empty public constructor
     }
@@ -64,7 +64,7 @@ public class ProjectFragment extends Fragment {
 
         URL = BaseClass.getInstance().BASE_URL_PROJECT;
         mTeamQueue = Volley.newRequestQueue(Objects.requireNonNull(getContext()));
-
+        final ArrayList<ModelProject> list = new ArrayList<>();
         final JsonObjectRequest objectRequest = new JsonObjectRequest(Request.Method.GET, URL, null,
                 new Response.Listener<JSONObject>() {
                     @Override

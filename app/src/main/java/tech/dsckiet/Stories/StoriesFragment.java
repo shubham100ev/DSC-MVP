@@ -3,15 +3,20 @@ package tech.dsckiet.Stories;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SimpleItemAnimator;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -32,6 +37,8 @@ import tech.dsckiet.BaseClass;
 import tech.dsckiet.Events.EventAdapter;
 import tech.dsckiet.Events.ModelEvent;
 import tech.dsckiet.R;
+import tech.dsckiet.Team.ModelTeam;
+import tech.dsckiet.Team.TeamAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -42,7 +49,7 @@ public class StoriesFragment extends Fragment {
     private StoriesAdapter mAdapter;
     private RecyclerView mRecyclerView;
     private Context mContext;
-    final ArrayList<ModelStories> list = new ArrayList<>();
+
 
 
     public StoriesFragment() {
@@ -55,10 +62,9 @@ public class StoriesFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_stories, container, false);;
 
-        mRecyclerView = view.findViewById(R.id.recycler_view_events);
+        mRecyclerView = view.findViewById(R.id.recycler_view_stories);
+
         setData();
-
-
         return view;
     }
 
@@ -67,7 +73,7 @@ public class StoriesFragment extends Fragment {
 
         URL = BaseClass.getInstance().BASE_URL_STORIES;
         mStoryQueue = Volley.newRequestQueue(Objects.requireNonNull(getContext()));
-
+        final ArrayList<ModelStories> list = new ArrayList<>();
         final JsonObjectRequest objectRequest = new JsonObjectRequest(Request.Method.GET, URL, null,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -80,30 +86,32 @@ public class StoriesFragment extends Fragment {
 
                             String jsonData = response.toString();
                             JSONObject obj = new JSONObject(jsonData);
+                            JSONArray arr = obj.getJSONArray("story");
 
-                            String jsonStory = obj.getString("story");
+                            for (int i = 0; i < arr.length(); i++) {
 
-                            JSONObject objMain = new JSONObject(jsonStory);
+                                String title = arr.getJSONObject(i).getString("title");
+                                String desc = arr.getJSONObject(i).getString("description");
 
 
 
-                                        String title = objMain.getString("title");
-                                        String desc = objMain.getString("description");
-                                        //TODO:: TITLE AND DESC
-//                                        list.add(new ModelStories(title, desc));
-//
-//
-//                            mAdapter = new StoriesAdapter(list, mContext);
-//                            LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
-//                            layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-//                            mRecyclerView.setNestedScrollingEnabled(true);
-//                            mRecyclerView.setHasFixedSize(true);
-//
-//                            mRecyclerView.setLayoutManager(layoutManager);
-//                            mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-//                            mRecyclerView.setAdapter(mAdapter);
-//
-//                            mAdapter.notifyDataSetChanged();
+                                    list.add(new ModelStories(title,desc));
+
+                            }
+
+
+
+                            mAdapter = new StoriesAdapter(list, getContext());
+                            LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+                            layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+                            mRecyclerView.setNestedScrollingEnabled(true);
+                            mRecyclerView.setHasFixedSize(true);
+                            ((SimpleItemAnimator) mRecyclerView.getItemAnimator()).setSupportsChangeAnimations(false);
+                            mRecyclerView.setLayoutManager(layoutManager);
+                            mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+                            mRecyclerView.setAdapter(mAdapter);
+
+                            mAdapter.notifyDataSetChanged();
                         } catch (Exception e) {
                             e.printStackTrace();
                         }

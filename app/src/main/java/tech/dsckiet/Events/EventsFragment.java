@@ -47,7 +47,7 @@ public class EventsFragment extends Fragment {
     private EventAdapter mAdapter;
     private RecyclerView mRecyclerView;
     private Context mContext;
-    final ArrayList<ModelEvent> list = new ArrayList<>();
+
 
     private RadioGroup mRadioGroup;
     private RadioButton mRadioButton,mRadioButton1;
@@ -104,7 +104,7 @@ public class EventsFragment extends Fragment {
 
             URL = BaseClass.getInstance().BASE_URL_EVENTS;
             mEventQueue = Volley.newRequestQueue(Objects.requireNonNull(getContext()));
-
+        final ArrayList<ModelEvent> list = new ArrayList<>();
             final JsonObjectRequest objectRequest = new JsonObjectRequest(Request.Method.GET, URL, null,
                     new Response.Listener<JSONObject>() {
                         @Override
