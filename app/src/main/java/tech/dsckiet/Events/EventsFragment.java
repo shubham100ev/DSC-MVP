@@ -28,8 +28,12 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.Objects;
 
@@ -65,10 +69,6 @@ public class EventsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_events,container,false);
 
-
-
-
-
         //INITIALIZATION
         mRecyclerView = view.findViewById(R.id.recycler_view_events);
         mRadioGroup = view.findViewById(R.id.radio_group);
@@ -92,8 +92,6 @@ public class EventsFragment extends Fragment {
                 }
             }
         });
-
-
 
 
         setData(1);
@@ -172,6 +170,8 @@ public class EventsFragment extends Fragment {
 
                                             @SuppressLint("SimpleDateFormat") Date date1 = new SimpleDateFormat("yyyy-MM-dd").parse(date);
                                             @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("MMM dd,yyyy");
+
+                                            System.out.println(">>>>>>>>>>>>>>>>>>>>>>>" + date);
                                             String time = startTime + ", " + dateFormat.format(date1);
 
                                             list.add(new ModelEvent(title, time, venue));

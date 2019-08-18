@@ -41,8 +41,6 @@ public class MainActivity extends AppCompatActivity implements RoundedBottomShee
 
     public static int selectedFragmentIndex = 1;
 
-    //TODO:: AttachBaseContext()
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

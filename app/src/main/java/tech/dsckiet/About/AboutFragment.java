@@ -19,19 +19,15 @@ import android.widget.ImageView;
 
 import tech.dsckiet.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class AboutFragment extends Fragment {
 
 
     public AboutFragment() {
-        // Required empty public constructor
+        
     }
     private CustomTabsServiceConnection customTabsServiceConnection;
     private CustomTabsClient mClient;
     CustomTabsSession customTabsSession;
-//    private Button ossBtn;
 
     ImageView aboutLink,aboutGithub,aboutInstagram;
 
@@ -43,7 +39,6 @@ public class AboutFragment extends Fragment {
         aboutLink = view.findViewById(R.id.about_link);
         aboutGithub = view.findViewById(R.id.about_github);
         aboutInstagram = view.findViewById(R.id.about_instagram);
-//        ossBtn = view.findViewById(R.id.oss_btn);
 
         aboutLink.setOnClickListener(new View.OnClickListener() {
             @Override
