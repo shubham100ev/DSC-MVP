@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingHorizontal="24dp"
+        android:paddingHorizontal="30dp"
         tools:targetApi="o">
 
         <com.wang.avi.AVLoadingIndicatorView
@@ -42,21 +42,17 @@
             android:layout_below="@id/title_stories"
             android:orientation="vertical"
             android:layout_marginBottom="16dp"
-            android:gravity="center_vertical">
+            android:gravity="center">
 
-            <android.support.v4.widget.NestedScrollView
-                android:layout_height="match_parent"
-                android:layout_width="match_parent">
+            <!--<android.support.v4.widget.NestedScrollView-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_width="match_parent">-->
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/recycler_view_stories"
+                <com.yarolegovich.discretescrollview.DiscreteScrollView
+                    android:id="@+id/item_picker"
                     android:layout_width="match_parent"
-                    app:layoutManager="android.support.v7.widget.LinearLayoutManager"
-                    android:layout_height="match_parent"
-                    android:nestedScrollingEnabled="true"
-                    android:scrollbars="none"
-                    android:orientation="vertical"/>
-            </android.support.v4.widget.NestedScrollView>
+                    android:layout_height="wrap_content" />
+            <!--</android.support.v4.widget.NestedScrollView>-->
         </LinearLayout>
 
     </RelativeLayout>

@@ -24,6 +24,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.yarolegovich.discretescrollview.DiscreteScrollView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -50,6 +51,7 @@ public class StoriesFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private Context mContext;
     private com.wang.avi.AVLoadingIndicatorView progressBar;
+    private DiscreteScrollView itemPicker;
 
     public StoriesFragment() {
         // Required empty public constructor

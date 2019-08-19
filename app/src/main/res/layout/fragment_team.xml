@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingHorizontal="30dp"
+        android:paddingHorizontal="24dp"
         tools:targetApi="o">
         <com.wang.avi.AVLoadingIndicatorView
             android:id="@+id/progress_team"
