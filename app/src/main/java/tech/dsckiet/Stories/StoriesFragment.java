@@ -1,13 +1,9 @@
 package tech.dsckiet.Stories;
 
 
-import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -16,7 +12,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -24,22 +19,15 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.yarolegovich.discretescrollview.DiscreteScrollView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Objects;
 
 import tech.dsckiet.BaseClass;
-import tech.dsckiet.Events.EventAdapter;
-import tech.dsckiet.Events.ModelEvent;
 import tech.dsckiet.R;
-import tech.dsckiet.Team.ModelTeam;
-import tech.dsckiet.Team.TeamAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -51,7 +39,6 @@ public class StoriesFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private Context mContext;
     private com.wang.avi.AVLoadingIndicatorView progressBar;
-    private DiscreteScrollView itemPicker;
 
     public StoriesFragment() {
         // Required empty public constructor

@@ -147,7 +147,7 @@ public class MainActivity extends AppCompatActivity implements RoundedBottomShee
     @Override
     public void onBackPressed() {
 
-            finish();
+//            finish();
       {
             if (doubleBackPress == true) {
                 super.onBackPressed();
